@@ -4,13 +4,48 @@
     <!-- Configurações Essenciais para SEO e Responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título Otimizado para SEO -->
+    <!-- Meta Tag Canonical (Boa Prática de SEO) - Substitua pela URL Real quando publicar -->
+    <link rel="canonical" href="https://seusite.com.br/guincho-24h-rj">
+    
+    <!-- Título Otimizado para SEO (Palavras-chave + Localização) -->
     <title>Reboque 24h e Guincho RS em Jacarepaguá, Taquara, Barra e Região</title>
     <!-- Descrição para Buscadores (Manter a densidade de palavras-chave) -->
     <meta name="description" content="Serviço de reboque e guincho 24 horas em Jacarepaguá, Pechincha, Freguesia, Taquara, Barra da Tijuca, Piedade e Méier. Atendimento rápido, confiável e imediato no RJ.">
     <!-- Keywords relevantes -->
     <meta name="keywords" content="reboque, guincho, 24 horas, Jacarepaguá, Taquara, Barra da Tijuca, Pechincha, Freguesia, Piedade, Méier, Rio de Janeiro, auto socorro, reboque barato">
 
+    <!-- Schema.org - Dados Estruturados LocalBusiness (MUITO importante para SEO local e Google Maps) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoBrakeService",
+      "name": "Reboque e Guincho RS - 24 Horas RJ",
+      "description": "Serviço de reboque e guincho 24 horas com atendimento imediato em Jacarepaguá, Barra da Tijuca e áreas adjacentes do Rio de Janeiro.",
+      "telephone": "+55-21-99959-4308",
+      "url": "https://seusite.com.br/guincho-24h-rj",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "State",
+        "name": "Rio de Janeiro",
+        "hasMap": "Jacarepaguá, Taquara, Barra da Tijuca, Piedade, Méier"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+    </script>
+    
     <!-- CDN do Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CDN do jQuery -->
@@ -112,12 +147,15 @@
                 </h1>
             </div>
 
-            <!-- Contato Rápido em Destaque (Agora em Verde) -->
+            <!-- Contato Rápido em Destaque (OTIMIZADO PARA MOBILE: Ícone visível, "Ligar Agora" some) -->
             <!-- Link de telefone com formatação correta -->
             <a href="tel:+5521999594308" class="flex items-center space-x-2 bg-green-500 hover:bg-green-600 transition-colors py-2 px-4 rounded-full font-bold text-lg shadow-lg">
-                <!-- Ícone de Telefone da Lucide -->
+                <!-- Ícone de Telefone da Lucide - Visível em todas as telas -->
                 <i data-lucide="phone-call" class="w-5 h-5"></i>
-                <span>Ligar Agora (21) 99959-4308</span>
+                <!-- Texto "Ligar Agora" - Oculto em telas pequenas (md:inline para aparecer em tablet/desktop) -->
+                <span class="hidden md:inline">Ligar Agora</span>
+                <!-- Número de Telefone - Visível em todas as telas -->
+                <span>(21) 99959-4308</span>
             </a>
         </div>
     </header>
@@ -125,8 +163,8 @@
     <main class="container mx-auto px-4 mt-0">
 
         <!-- Seção Hero (Chamada de Ação Principal COM CARROSSEL DE FUNDO) -->
-        <!-- Adicionado mt-4 para DESCOLAR visualmente do header -->
-        <section class="relative h-[600px] md:h-[700px] overflow-hidden rounded-xl shadow-inner mb-12 mt-4">
+        <!-- Ajustado h-screen e max-h-[600px] para melhor responsividade em mobile -->
+        <section class="relative h-screen max-h-[600px] md:h-[700px] overflow-hidden rounded-xl shadow-inner mb-12 mt-4">
             
             <!-- Carrossel de Imagens no Fundo -->
             <div id="hero-carousel" class="hero-carousel">
@@ -143,19 +181,19 @@
             <!-- Conteúdo do Hero (Texto e Botão) -->
             <div class="hero-content text-white px-4 py-8">
                 <div class="max-w-4xl mx-auto">
-                    <!-- Título Secundário (Ação Urgente) -->
-                    <h2 class="text-5xl md:text-6xl font-extrabold mb-4 animate-pulse text-sky-400">
+                    <!-- Título Secundário (Ação Urgente) - Responsividade no Tamanho da Fonte -->
+                    <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 animate-pulse text-sky-400">
                         GUINCHO 24 HORAS: ATENDIMENTO IMEDIATO
                     </h2>
-                    <!-- Descrição sem formatação bold (**) -->
-                    <p class="text-2xl md:text-3xl font-light mb-8 text-gray-300">
+                    <!-- Descrição - Responsividade no Tamanho da Fonte -->
+                    <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-gray-300">
                         Seu veículo quebrou? Batida? Atendimento rápido em Jacarepaguá, Barra da Tijuca e toda a região do Rio de Janeiro.
                     </p>
 
                     <!-- Botão Principal de WhatsApp (CTA de Alto Impacto - VERDE) -->
-                    <button id="whatsapp-btn-main" class="color-primary-green text-white font-black py-4 px-10 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3 text-2xl uppercase mx-auto ring-4 ring-green-300 ring-opacity-50">
-                        <!-- Ícone do WhatsApp (Lucide) -->
-                        <i data-lucide="messages-square" class="w-7 h-7"></i>
+                    <button id="whatsapp-btn-main" class="color-primary-green text-white font-black py-4 px-8 sm:px-10 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3 text-xl sm:text-2xl uppercase mx-auto ring-4 ring-green-300 ring-opacity-50">
+                        <!-- Ícone do WhatsApp (Lucide) - Oculto em mobile, aparece a partir de sm: -->
+                        <i data-lucide="messages-square" class="hidden sm:block w-6 h-6 sm:w-7 sm:h-7"></i>
                         <span>Falar no WhatsApp Imediato</span>
                     </button>
                 </div>
@@ -164,10 +202,11 @@
             <!-- CONTROLES MANUAIS (Setas e Indicadores) -->
             <div class="absolute inset-0 z-5">
                 <!-- Setas de Navegação -->
-                <button id="prev-hero-btn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full opacity-70 hover:opacity-100 transition-opacity shadow-lg">
+                <!-- Oculta setas em telas muito pequenas para dar espaço ao conteúdo -->
+                <button id="prev-hero-btn" class="hidden sm:block absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full opacity-70 hover:opacity-100 transition-opacity shadow-lg">
                     <i data-lucide="chevron-left" class="w-6 h-6"></i>
                 </button>
-                <button id="next-hero-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full opacity-70 hover:opacity-100 transition-opacity shadow-lg">
+                <button id="next-hero-btn" class="hidden sm:block absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full opacity-70 hover:opacity-100 transition-opacity shadow-lg">
                     <i data-lucide="chevron-right" class="w-6 h-6"></i>
                 </button>
 
@@ -323,6 +362,8 @@
 
             // Função para reiniciar o timer do Auto-play
             function startAutoPlay() {
+                // Limpa o intervalo anterior para evitar duplicação
+                clearInterval(autoPlayInterval);
                 autoPlayInterval = setInterval(nextHeroItem, 5000);
             }
             
